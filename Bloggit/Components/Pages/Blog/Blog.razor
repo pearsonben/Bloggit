@@ -1,0 +1,19 @@
+﻿@page "/{User}/{Slug}"
+
+<h3>Welcome to @User's blog!</h3>
+
+<h1>@Slug</h1>
+
+
+@code {
+    [Parameter] public required string User { get; set; }
+    [Parameter] public required string Slug { get; set; }
+
+    protected override Task OnParametersSetAsync()
+    {
+        // here can fetch the blog contents
+        
+        return base.OnParametersSetAsync();
+    }
+
+}
