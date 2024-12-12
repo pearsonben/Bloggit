@@ -1,6 +1,16 @@
-﻿@page "/CreateBlog"
-<h3>CreateBlog</h3>
+﻿@page "/{User}/{Slug}/create"
+
+<h3>Creating blog: @Slug for user: @User</h3>
 
 @code {
-    
+    [Parameter] public required string User { get; set; }
+    [Parameter] public required string Slug { get; set; }
+
+    protected override Task OnParametersSetAsync()
+    {
+        // here can fetch the blog contents
+
+        return base.OnParametersSetAsync();
+    }
+
 }
