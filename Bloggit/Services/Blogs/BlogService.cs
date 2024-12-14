@@ -32,7 +32,7 @@ public class BlogService : IBlogService
 
         if (isDuplicateSlug) return Result<BlogDto>.Failure("This Blog already exists.");
 
-        var blogToCreate = Blog.Create(request.Slug, request.Title, request.RichTextContent);
+        var blogToCreate = Blog.Create(request.Title, request.RichTextContent);
         
         _dbContext.Blogs.Add(blogToCreate);
         
